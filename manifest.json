@@ -1,0 +1,25 @@
+{
+    "name": "Normify",
+    "version": "1.0",
+    "description": "Make browsing Lookism.net in public easier.",
+    "manifest_version": 2,
+    "permissions": ["storage"],
+    "browser_action": {
+    	"default_title": "On/Off",
+    	"default_icon": "icon.png"
+    },  
+    "background": {
+	    "scripts": ["onoff.js"],
+	    "persistent": true
+	},
+    "content_scripts": [
+   {
+     "matches": ["https://lookism.net/*"],
+     "all_frames": true,
+     "js": ["contentScript.js"],
+     "css": ["style.css"],
+     "run_at": "document_start"
+   }
+ ],
+ "options_page": "options.html"
+}

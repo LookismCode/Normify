@@ -1,0 +1,28 @@
+.bbCodeBlock-content:before, .bbCodeBlock-content:after {
+    content: " ";
+    display: table;
+}
+
+.bbCodeBlock-content:after {
+    clear: both;
+}
+
+.bbCodeSpoiler-content {
+    display: none;
+    opacity: 0;
+    -webkit-transition: all .1 ease, -xf-opacity .1 ease;
+    transition: all .1 ease, -xf-opacity .1 ease;
+    overflow-y: hidden;
+    height: 0;
+    -webkit-transition-property: all,-xf-height;
+    transition-property: all,-xf-height;
+}
+
+.bbCodeSpoiler-content.is-active {
+    height: auto;
+    overflow-y: visible;
+}
+.bbCodeSpoiler-content.is-active {
+    display: block;
+    opacity: 1;
+}
